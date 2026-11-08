@@ -27,6 +27,12 @@ add_executable(KEYFORGE WIN32
   src/KEYFORGE.rc
 )
 
+add_custom_command(TARGET KEYFORGE POST_BUILD
+  COMMAND ${CMAKE_COMMAND} -E copy_directory
+    "${CMAKE_CURRENT_SOURCE_DIR}/sounds"
+    "$<TARGET_FILE_DIR:KEYFORGE>/sounds"
+)
+
 target_compile_definitions(KEYFORGE PRIVATE UNICODE _UNICODE NOMINMAX WIN32_LEAN_AND_MEAN)
 target_compile_options(KEYFORGE PRIVATE /W4 /permissive- /EHsc)
 target_link_libraries(KEYFORGE PRIVATE user32 shell32 ole32 avrt xaudio2)
