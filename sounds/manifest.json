@@ -1,0 +1,6 @@
+{
+  "name": "Classic Mechanical",
+  "version": 1,
+  "format": "pcm-wav",
+  "description": "The user-provided mechanical keyboard sample is the default sound for all keys."
+}

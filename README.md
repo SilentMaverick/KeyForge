@@ -13,6 +13,7 @@ KEYFORGE is a Windows 11 desktop audio-feedback engine that makes an ordinary ke
 - Per-key assignments and drag/drop/import path.
 - Master volume and emergency disable hotkey (`Ctrl+Alt+Shift+K`).
 - User configuration under `%LOCALAPPDATA%\KEYFORGE`.
+- The bundled user-provided mechanical-keyboard WAV is the default sound for every key.
 - No administrator requirement, drivers, services, telemetry, registry persistence, or network dependency.
 
 ## Build
@@ -25,6 +26,15 @@ cmake --build build --config Release
 ```
 
 Run `build\Release\KEYFORGE.exe` from the project/release directory containing the `sounds` folder.
+
+## Add and assign sounds
+
+1. Select a key in the on-screen keyboard.
+2. Choose **Add WAV** and import a PCM WAV file.
+3. Select the sound from **Sound Library**, then choose **Assign**.
+4. Choose **Preview** to hear the selected sound.
+
+Imported sounds and per-key assignments are kept under `%LOCALAPPDATA%\KEYFORGE`, so they remain available when the app is rebuilt or updated. The spacebar and modifier keys can be assigned independently.
 
 ## Audio format
 
